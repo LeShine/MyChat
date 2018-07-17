@@ -11,10 +11,12 @@ app.ws.use(function (ctx, next) {
     return next(ctx)
 })
 app.ws.use(route.all('/', function (ctx) {
+        //存贮连接
         id += 1;
         ctx.id = id;
         clientMap[id] = ctx;
         console.log(id+"进入群聊");
+        //监听消息
         ctx.websocket.on('message', function (message) {
             // //向除建立该链接的其他连接者广播
             // ctx.websocket.emit(message)
@@ -30,9 +32,13 @@ app.ws.use(route.all('/', function (ctx) {
 
         ctx.websocket.on('close', function (message) {
             // global.gc();//内存回收，需特定指令启动
-            console.log(message)
+            // console.log(message)
             console.log(ctx.id+"离开了聊天室")
             sendAll("离开了聊天室",ctx)
+        })
+
+        ctx.websocket.on('error',function(err){
+            console.log("出错了"+err)
         })
 }))
 app.listen(3000)

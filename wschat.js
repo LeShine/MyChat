@@ -25,6 +25,6 @@
         console.log("Connection closed.")
     }
     // 错误捕捉
-    webSocket.oner = function (err) {
+    webSocket.onerror = function (err) {
         console.log("Error"+err)
     }
