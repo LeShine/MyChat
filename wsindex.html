@@ -1,0 +1,17 @@
+<script src="wschat.js"></script>
+<script>
+    function say() {
+        webSocket.send(myform.sayinput.value);
+    }
+</script>
+</head>
+
+<body>
+    <h1>聊天室</h1>
+    <div id='chatroom' style='width:400px;height:300px;overflow:auto;border:1px solid blue'></div>
+    <form name="myform">
+        <input type='text' name='name' value="快给自己起个名字吧"/>
+        <input type='text' name='sayinput' value="你想和大家说什么？" />
+        <input type='button' value='say' onclick='say()' />
+    </form>
+</body>

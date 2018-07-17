@@ -1,0 +1,9 @@
+{
+  "name": "socket",
+  "version": "0.0.1",
+  "description": "mychat",
+  "dependencies": {},
+  "devDependencies": {
+    "net": "^1.0.2"
+  }
+}

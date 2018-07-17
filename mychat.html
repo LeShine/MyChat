@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="mychat.js"></script>
+    <script>
+        function send(){
+            webSocket.send("wo连接服务器成功")
+        }
+    </script>
+    <title>聊天室</title>
+    <style>
+        .index{
+            width: 1000px;
+            background-color: gray;
+            border: 1px solid #000000;
+            height: 800px;
+            display: flex;
+        }
+        .left{
+            border: 1px solid #000000;
+            width: 200px;
+            height: 700px;
+            background-color: aliceblue;
+            text-align: center;
+            margin:50px 0 0 50px;
+        }
+        .left .BT{
+            font-size: 20px;
+            color: #000000;
+        }
+        .left .list{
+            border: 1px solid #000000;
+            background-color: #fff;
+            text-align: center;
+            width: 200px;
+            height: 50px;
+        }
+        .left .list p{
+            color: #000000;
+            font-size: 14px;
+        }
+        .right{
+            border: 1px solid #000000;
+            width: 650px;
+            margin:50px 0 0 50px;
+            height: 700px;
+            background-color: #fff;
+        }
+        .right .top{
+            width: 100%;
+            border-bottom: 1px solid gray;
+        }
+        .right .top p{
+            display: inline-block;
+            color: #000000;
+            font-size: 14px;
+            margin-left: 50px;
+        }
+        .right .top input{
+            width: 200px;
+            display: inline-block;
+        }
+        .right .center{
+            width: 620px;
+            height: 480px;
+            margin: 0 auto;
+            border: 1px solid #000;
+            background-color: beige;
+            margin-top: 20px;
+        }
+        .right .center p{
+            margin-top: 20px;
+            margin-left: 30px;
+        }
+        .right .center p:first-child{
+            color: #000;
+            font-size: 14px;
+        }
+        hr{
+            top: 68%;
+            position: relative
+        }
+        .right .bottom{
+            margin: 0 auto;
+            width: 620px;
+            height: 100px;
+            border:1px solid #000000;
+            border-top: 0px;
+            overflow: hidden;
+            border-bottom: 0px
+        }
+        .right .bottom input{
+            width: 620px;
+            height: 98px;
+            margin: 0 auto;
+            border:0px;
+        }
+        .right .empty{
+            width: 620px;
+            height: 40px;
+            margin: 0 auto;
+            border:1px solid #000000;
+            background-color: beige;
+        }
+        .right .empty input{
+            float: right;
+            margin-top: -9px;
+            width: 100px;
+            height: 25px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body >
+    
+    <div class="index">
+        <div class="left">
+            <p class="BT">Send To</p>
+            <div class="list" id="first">
+                <p>all</p>
+            </div>
+            
+            <div class="list" id="second">
+                <p>jackson</p>
+            </div>
+                
+            <div class="list" id="third">
+                <p>john</p>
+            </div>
+                
+            <div class="list" id="fourth">
+                <p>anmy</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="top">
+                <p>name</p>
+                <input type="text">
+            </div>
+            <div class="center">
+                <p>john send to you 2018-02-03 15:25:30</p>
+                <p>What are you doing?</p>
+                
+            <hr>
+            </div>
+            <div class="bottom">
+                <input type="text" id="bottom">
+            </div>
+            <div class="empty">
+                <p>  </p>
+                <input type="button" value="send" onclick="send()">
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+     
+    </script>
+
+</body>
+
+</html>
