@@ -34,7 +34,9 @@ app.ws.use(route.all('/', function (ctx) {
             // global.gc();//内存回收，需特定指令启动
             // console.log(message)
             console.log(ctx.id+"离开了聊天室")
+            delete clientMap[ctx.id]
             sendAll("离开了聊天室",ctx)
+            
         })
 
         ctx.websocket.on('error',function(err){
